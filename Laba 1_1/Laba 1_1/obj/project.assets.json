@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\YandexDisk\\БГУИР 90331\\ООП\\BSUIR-C#\\Laba 1_1\\Laba 1_1\\Laba 1_1.csproj",
+      "projectUniqueName": "C:\\YandexDisk\\БГУИР 90331\\ООП\\BSUIR-C-\\Laba 1_1\\Laba 1_1\\Laba 1_1.csproj",
       "projectName": "Laba 1_1",
-      "projectPath": "C:\\YandexDisk\\БГУИР 90331\\ООП\\BSUIR-C#\\Laba 1_1\\Laba 1_1\\Laba 1_1.csproj",
+      "projectPath": "C:\\YandexDisk\\БГУИР 90331\\ООП\\BSUIR-C-\\Laba 1_1\\Laba 1_1\\Laba 1_1.csproj",
       "packagesPath": "C:\\Users\\test\\.nuget\\packages\\",
-      "outputPath": "C:\\YandexDisk\\БГУИР 90331\\ООП\\BSUIR-C#\\Laba 1_1\\Laba 1_1\\obj\\",
+      "outputPath": "C:\\YandexDisk\\БГУИР 90331\\ООП\\BSUIR-C-\\Laba 1_1\\Laba 1_1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\test\\AppData\\Roaming\\NuGet\\NuGet.Config",

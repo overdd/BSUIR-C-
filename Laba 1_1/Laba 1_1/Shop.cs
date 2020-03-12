@@ -6,7 +6,7 @@ namespace Laba_1_1
 {
     class Shop
     {
-        public string ShopName { get; } = "Standart shop name";
+        public string ShopName { get; } = "Standart shop name";                     //стандартное имя магазина
         private int shopStaffNumber;                                                // количество персонала
         private float totalRevenue;                                               //выручка итого
         private float averageStaffCompensation;                              // средняя зарплата персонала

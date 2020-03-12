@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\YandexDisk\\БГУИР 90331\\ООП\\BSUIR-C#\\Laba 1_2\\Laba 1_2\\Laba 1_2.csproj": {}
+    "C:\\YandexDisk\\БГУИР 90331\\ООП\\BSUIR-C-\\Laba 1_2\\Laba 1_2\\Laba 1_2.csproj": {}
   },
   "projects": {
-    "C:\\YandexDisk\\БГУИР 90331\\ООП\\BSUIR-C#\\Laba 1_2\\Laba 1_2\\Laba 1_2.csproj": {
+    "C:\\YandexDisk\\БГУИР 90331\\ООП\\BSUIR-C-\\Laba 1_2\\Laba 1_2\\Laba 1_2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\YandexDisk\\БГУИР 90331\\ООП\\BSUIR-C#\\Laba 1_2\\Laba 1_2\\Laba 1_2.csproj",
+        "projectUniqueName": "C:\\YandexDisk\\БГУИР 90331\\ООП\\BSUIR-C-\\Laba 1_2\\Laba 1_2\\Laba 1_2.csproj",
         "projectName": "Laba 1_2",
-        "projectPath": "C:\\YandexDisk\\БГУИР 90331\\ООП\\BSUIR-C#\\Laba 1_2\\Laba 1_2\\Laba 1_2.csproj",
+        "projectPath": "C:\\YandexDisk\\БГУИР 90331\\ООП\\BSUIR-C-\\Laba 1_2\\Laba 1_2\\Laba 1_2.csproj",
         "packagesPath": "C:\\Users\\test\\.nuget\\packages\\",
-        "outputPath": "C:\\YandexDisk\\БГУИР 90331\\ООП\\BSUIR-C#\\Laba 1_2\\Laba 1_2\\obj\\",
+        "outputPath": "C:\\YandexDisk\\БГУИР 90331\\ООП\\BSUIR-C-\\Laba 1_2\\Laba 1_2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\test\\AppData\\Roaming\\NuGet\\NuGet.Config",
