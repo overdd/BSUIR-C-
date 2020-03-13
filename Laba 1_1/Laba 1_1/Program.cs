@@ -8,18 +8,23 @@ namespace Laba_1_1
         static void Main(string[] args)
         {
             Shop shopAllParameters = new Shop(15, 70000, 500, 45000, 20000);
-            shopAllParameters.Print();
+            Console.WriteLine(shopAllParameters);
             Shop shopNoParameters = new Shop();
-            shopNoParameters.Print();
+            Console.WriteLine(shopNoParameters);
             Shop shopPartialParameters = new Shop(15, 150000, 500);
-            shopPartialParameters.Print();
-            shopAllParameters.BonusCalculator();
-            shopNoParameters.BonusCalculator();
-            shopPartialParameters.BonusCalculator();
-            shopAllParameters.ProfitabilityFallIndicator();
-            shopNoParameters.ProfitabilityFallIndicator();
-            shopPartialParameters.ProfitabilityFallIndicator();
+            Console.WriteLine(shopPartialParameters);
+
+            Console.WriteLine(shopAllParameters.BonusCalculator());
+            Console.WriteLine(shopNoParameters.BonusCalculator());
+            Console.WriteLine(shopPartialParameters.BonusCalculator());
+
+            Console.WriteLine(shopAllParameters.ProfitabilityFallIndicator());
+            Console.WriteLine(shopNoParameters.ProfitabilityFallIndicator());
+            Console.WriteLine(shopPartialParameters.ProfitabilityFallIndicator());
+
             shopNoParameters.ProfitabilityComparator(shopPartialParameters);
+
+            Console.WriteLine("Магазин с максимальной рентабельностью:");
             Shop.ProfitabilityComparatorFor3Shops(shopAllParameters, shopNoParameters, shopPartialParameters);
 
             Console.WriteLine("ShopName: {0}", shopAllParameters.ShopName);
@@ -28,12 +33,13 @@ namespace Laba_1_1
             Console.WriteLine("AverageStaffCompensation: {0}", shopAllParameters.AverageStaffCompensation);
             Console.WriteLine("TotalCostOfGoodsSold: {0}", shopAllParameters.TotalCostOfGoodsSold);
             Console.WriteLine("TotalOverheadCosts: {0}", shopAllParameters.TotalOverheadCosts);
+
             shopAllParameters.ShopStaffNumber++;
             shopAllParameters.TotalRevenue++;
             shopAllParameters.AverageStaffCompensation++;
             shopAllParameters.TotalCostOfGoodsSold++;
             shopAllParameters.TotalOverheadCosts++;
-            shopAllParameters.Print();
+            shopAllParameters.ToString();
             Shop shopClone = shopAllParameters;
             shopAllParameters.TotalOverheadCosts = 4;
             Console.WriteLine("shopAllParameters.TotalOverheadCosts = {0}, shopClone.TotalOverheadCosts = {1}", shopAllParameters.TotalOverheadCosts, shopClone.TotalOverheadCosts);

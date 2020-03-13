@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace Laba_1_1
 {
@@ -59,17 +58,13 @@ namespace Laba_1_1
             }
         }
 
-        public Shop(int shopStaffNumber, float totalRevenue, float averageStaffCompensation, float totalCostOfGoodsSold, float totalOverheadCosts)
+        public Shop(int ShopStaffNumber, float TotalRevenue, float AverageStaffCompensation, float TotalCostOfGoodsSold, float TotalOverheadCosts)
         {
-            _ = (shopStaffNumber > 0 & shopStaffNumber < 30) ? this.shopStaffNumber = shopStaffNumber : this.shopStaffNumber = 0;
-
-            _ = totalRevenue >= 0 ? this.totalRevenue = totalRevenue : this.totalRevenue = 0;
-
-            _ = averageStaffCompensation >= 0 ? this.averageStaffCompensation = averageStaffCompensation : this.averageStaffCompensation = 0;
-
-            _ = totalCostOfGoodsSold >= 0 ? this.totalCostOfGoodsSold = totalCostOfGoodsSold : this.totalCostOfGoodsSold = 0;
-
-            _ = totalOverheadCosts >= 0 ? this.totalOverheadCosts = totalOverheadCosts : this.totalOverheadCosts = 0;
+            this.ShopStaffNumber = ShopStaffNumber;
+            this.TotalRevenue = TotalRevenue;
+            this.AverageStaffCompensation = AverageStaffCompensation;
+            this.TotalCostOfGoodsSold = TotalCostOfGoodsSold;
+            this.TotalOverheadCosts = TotalOverheadCosts;
         }
 
         public Shop() : this(1, 10000, 450, 8000, 500)   //конструктор без аргументов
@@ -77,27 +72,28 @@ namespace Laba_1_1
         }
 
         //конструктор с частью аргументов
-        public Shop(int shopStaffNumber, float totalRevenue, float averageStaffCompensation) : this(shopStaffNumber, totalRevenue, averageStaffCompensation, 0, 0)
+        public Shop(int ShopStaffNumber, float TotalRevenue, float AverageStaffCompensation) : this(ShopStaffNumber, TotalRevenue, AverageStaffCompensation, 0, 0)
         {
         }
 
-        //метод Print()
-        public void Print() => Console.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}", ShopName, ShopStaffNumber, TotalRevenue, AverageStaffCompensation, TotalCostOfGoodsSold, TotalOverheadCosts);
-
-        public void BonusCalculator()
+        //переопределение ToString()
+        public override string ToString()
         {
-            float bonus = (TotalRevenue - TotalCostOfGoodsSold - AverageStaffCompensation * ShopStaffNumber - TotalOverheadCosts) / ShopStaffNumber;
-            Console.WriteLine("Премия для магазина = {0}", bonus);
+            return String.Format("Магазин с названием {0}, с {1} сотрудниками, выручка {2}, средняя ЗП продавца {3}, общая стоимость проданных товаров {4}, общие накладные расходы {5}", ShopName, ShopStaffNumber, TotalRevenue, AverageStaffCompensation, TotalCostOfGoodsSold, TotalOverheadCosts);
         }
 
-        public void ProfitabilityFallIndicator()
+
+        public float BonusCalculator()
         {
-            bool fallFlag;
-            _ = ((TotalRevenue - TotalCostOfGoodsSold - AverageStaffCompensation * ShopStaffNumber - TotalOverheadCosts) < TotalRevenue * 0.1) ? fallFlag = true : fallFlag = false;
-            if (fallFlag == true)
-                Console.WriteLine("Увы, рентабельность упала ниже 10% от выручки!");
-            else
-                Console.WriteLine("Рентабельность выше 10% от выручки!");
+            return  (TotalRevenue - TotalCostOfGoodsSold - AverageStaffCompensation * ShopStaffNumber - TotalOverheadCosts) / ShopStaffNumber;
+           
+        }
+
+        public bool ProfitabilityFallIndicator()
+        {
+            return ((TotalRevenue - TotalCostOfGoodsSold - AverageStaffCompensation * ShopStaffNumber - TotalOverheadCosts) < TotalRevenue * 0.1) ? fallFlag = true : fallFlag = false;
+            
+
         }
 
         public bool ProfitabilityComparator(Shop shop2)
@@ -106,12 +102,12 @@ namespace Laba_1_1
             float profitabilityShop2 = (shop2.TotalRevenue - shop2.TotalCostOfGoodsSold - shop2.AverageStaffCompensation * shop2.ShopStaffNumber - shop2.TotalOverheadCosts) / shop2.TotalRevenue;
             if (profitabilityShop1 > profitabilityShop2)
             {
-                Console.WriteLine("True");
+               
                 return true;
             }
             else
             {
-                Console.WriteLine("False");
+                
                 return false;
             }
         }
@@ -139,8 +135,8 @@ namespace Laba_1_1
             {
                 shopWithMaxProfitability = shop3;
             }
-            Console.WriteLine("Shop with max profitability is:");
-            shopWithMaxProfitability.Print();
+            
+            shopWithMaxProfitability.ToString();
             return shopWithMaxProfitability;
         }
 

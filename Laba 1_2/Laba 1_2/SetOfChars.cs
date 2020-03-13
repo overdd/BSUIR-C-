@@ -7,7 +7,7 @@ namespace Laba_1_2
     class SetOfChars
     {
         private char[] arrayChars;
-        private int[] arrayInt;
+
 
         public char[] ArrayChars
         {
@@ -20,17 +20,12 @@ namespace Laba_1_2
             }
         }
 
-        public int[] ArrayInt { get => arrayInt; set => arrayInt = value; }
 
         public SetOfChars(char[] arrayChars)
         {
             this.arrayChars = arrayChars;
         }
 
-        public SetOfChars(int[] arrayInt)
-        {
-            this.arrayInt = arrayInt;
-        }
 
         public SetOfChars()
         {
@@ -40,10 +35,12 @@ namespace Laba_1_2
 
         public bool ArrayValidityChecker(char[] arrayChars)
         {
-            Array.Sort(arrayChars);
+            if (arrayChars == null)
+                Console.WriteLine("Массив - null!");
+            else
+                Array.Sort(arrayChars);
             for (int i = 0; i < arrayChars.Length - 1; i++)
             {
-                Console.WriteLine(arrayChars[i]);
                 if (arrayChars[i] == arrayChars[i + 1])
                     return false;
             }
@@ -52,81 +49,102 @@ namespace Laba_1_2
 
         public static SetOfChars operator +(SetOfChars A, SetOfChars B)
         {
-            SetOfChars temp = new SetOfChars();
-            int[] exampleIntArray = new int[((A.ArrayChars.Length < B.ArrayChars.Length) ? B.ArrayChars.Length : A.ArrayChars.Length)];
-            temp.ArrayInt = exampleIntArray;
-            for (int i = 0; i <= (((A.ArrayChars.Length > B.ArrayChars.Length) ? B.ArrayChars.Length : A.ArrayChars.Length) - 1); i++)
+            Console.WriteLine("Начало перегрузки +");
+            char[] tempCharArray = new char[A.ArrayChars.Length + B.ArrayChars.Length];
+            SetOfChars temp = new SetOfChars(tempCharArray);
+
+            for (int i = 0; i < (A.ArrayChars.Length); i++)
             {
-                temp.ArrayInt[i] = (int)A.ArrayChars[i] + (int)B.ArrayChars[i];
+                temp.ArrayChars[i] = A.ArrayChars[i];
+            }
+            for (int i = 0; i < (B.ArrayChars.Length); i++)
+            {
+                temp.ArrayChars[A.ArrayChars.Length + i] = B.ArrayChars[i];
             }
 
-            foreach (int item in temp.ArrayInt)
-            { Console.WriteLine("{0}", item); };
-
+            foreach (char item in temp.ArrayChars)
+                Console.WriteLine("{0}", item);
+            Console.WriteLine("Конец перегрузки +");
             return temp;
         }
 
 
         public static SetOfChars operator -(SetOfChars A, SetOfChars B)
         {
-            SetOfChars temp = new SetOfChars();
-            int[] exampleIntArray = new int[((A.ArrayChars.Length < B.ArrayChars.Length) ? B.ArrayChars.Length : A.ArrayChars.Length)];
-            temp.ArrayInt = exampleIntArray;
-            for (int i = 0; i <= (((A.ArrayChars.Length > B.ArrayChars.Length) ? B.ArrayChars.Length : A.ArrayChars.Length) - 1); i++)
+            Console.WriteLine("Начало перегрузки -");
+            char[] tempCharArray = new char[A.ArrayChars.Length];
+            SetOfChars temp = new SetOfChars(tempCharArray);
+
+            for (int i = 0; i < A.ArrayChars.Length; i++)           //копируем первый массив в итоговый массив
+                temp.ArrayChars[i] = A.ArrayChars[i];
+
+            for (int i = 0; i < A.ArrayChars.Length; i++)           //обнуляем символы в итогов массиве, которые есть во втором
             {
-                temp.ArrayInt[i] = (int)A.ArrayChars[i] - (int)B.ArrayChars[i];
+                for (int j = 0; j < B.ArrayChars.Length; j++)
+                {
+                    if (A.ArrayChars[i] == B.ArrayChars[j])
+                        temp.ArrayChars[i] = '\0';
+                }
             }
 
-            foreach (int item in temp.ArrayInt)
-            { Console.WriteLine("{0}", item); };
-
+            foreach (char item in temp.ArrayChars)
+                Console.WriteLine("{0}", item);
+            Console.WriteLine("Конец перегрузки -");
             return temp;
         }
 
         public static SetOfChars operator *(SetOfChars A, SetOfChars B)
         {
-            SetOfChars temp = new SetOfChars();
-            int[] exampleIntArray = new int[((A.ArrayChars.Length < B.ArrayChars.Length) ? B.ArrayChars.Length : A.ArrayChars.Length)];
-            temp.ArrayInt = exampleIntArray;
-            for (int i = 0; i <= (((A.ArrayChars.Length > B.ArrayChars.Length) ? B.ArrayChars.Length : A.ArrayChars.Length) - 1); i++)
+            Console.WriteLine("Начало перегрузки *");
+            char[] tempCharArray = new char[A.ArrayChars.Length + B.ArrayChars.Length];
+            SetOfChars temp = new SetOfChars(tempCharArray);
+
+            for (int i = 0; i < A.ArrayChars.Length; i++)
             {
-                temp.ArrayInt[i] = (int)A.ArrayChars[i] * (int)B.ArrayChars[i];
+                for (int j = 0; j < B.ArrayChars.Length; j++)
+                {
+                    if (A.ArrayChars[i] == B.ArrayChars[j])
+                        temp.ArrayChars[i] = A.ArrayChars[i];
+                    else
+                        temp.ArrayChars[i] = '\0';
+                }
             }
 
-            foreach (int item in temp.ArrayInt)
-            { Console.WriteLine("{0}", item); };
-
+            foreach (char item in temp.ArrayChars)
+                Console.WriteLine("{0}", item);
+            Console.WriteLine("Конец перегрузки *");
             return temp;
         }
 
 
-        public static bool operator ==(SetOfChars A, SetOfChars B)
-        {
-            if (A.ArrayChars.Length == B.ArrayChars.Length)
-            {
-                Console.WriteLine("Равны");
-                return true;
-            }
-            else
-            {
-                Console.WriteLine("Не равны");
-                return false;
-            }
-        }
 
-        public static bool operator !=(SetOfChars A, SetOfChars B)
-        {
-            if (A.ArrayChars.Length != B.ArrayChars.Length)
-            {
-                Console.WriteLine("Истина");
-                return true;
-            }
-            else
-            {
-                Console.WriteLine("Ложь");
-                return false;
-            }
-        }
+        //public static bool operator ==(SetOfChars A, SetOfChars B)
+        //{
+        //    if (A.ArrayChars.Length == B.ArrayChars.Length)
+        //    {
+        //        Console.WriteLine("Равны");
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Не равны");
+        //        return false;
+        //    }
+        //}
+
+        //public static bool operator !=(SetOfChars A, SetOfChars B)
+        //{
+        //    if (A.ArrayChars.Length != B.ArrayChars.Length)
+        //    {
+        //        Console.WriteLine("Истина");
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Ложь");
+        //        return false;
+        //    }
+        //}
 
     }
 }
