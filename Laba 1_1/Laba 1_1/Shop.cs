@@ -85,15 +85,14 @@ namespace Laba_1_1
 
         public float BonusCalculator()
         {
-            return  (TotalRevenue - TotalCostOfGoodsSold - AverageStaffCompensation * ShopStaffNumber - TotalOverheadCosts) / ShopStaffNumber;
-           
+            return (TotalRevenue - TotalCostOfGoodsSold - AverageStaffCompensation * ShopStaffNumber - TotalOverheadCosts) / ShopStaffNumber;
+
         }
 
         public bool ProfitabilityFallIndicator()
         {
+            bool fallFlag;
             return ((TotalRevenue - TotalCostOfGoodsSold - AverageStaffCompensation * ShopStaffNumber - TotalOverheadCosts) < TotalRevenue * 0.1) ? fallFlag = true : fallFlag = false;
-            
-
         }
 
         public bool ProfitabilityComparator(Shop shop2)
@@ -102,12 +101,12 @@ namespace Laba_1_1
             float profitabilityShop2 = (shop2.TotalRevenue - shop2.TotalCostOfGoodsSold - shop2.AverageStaffCompensation * shop2.ShopStaffNumber - shop2.TotalOverheadCosts) / shop2.TotalRevenue;
             if (profitabilityShop1 > profitabilityShop2)
             {
-               
+
                 return true;
             }
             else
             {
-                
+
                 return false;
             }
         }
@@ -135,7 +134,7 @@ namespace Laba_1_1
             {
                 shopWithMaxProfitability = shop3;
             }
-            
+
             shopWithMaxProfitability.ToString();
             return shopWithMaxProfitability;
         }

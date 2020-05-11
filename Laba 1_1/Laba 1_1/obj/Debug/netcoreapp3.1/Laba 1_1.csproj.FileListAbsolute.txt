@@ -20,3 +20,5 @@ C:\YandexDisk\БГУИР 90331\ООП\BSUIR-C-\Laba 1_1\Laba 1_1\obj\Debug\netco
 C:\YandexDisk\БГУИР 90331\ООП\BSUIR-C-\Laba 1_1\Laba 1_1\obj\Debug\netcoreapp3.1\Laba 1_1.AssemblyInfo.cs
 C:\YandexDisk\БГУИР 90331\ООП\BSUIR-C-\Laba 1_1\Laba 1_1\obj\Debug\netcoreapp3.1\Laba 1_1.dll
 C:\YandexDisk\БГУИР 90331\ООП\BSUIR-C-\Laba 1_1\Laba 1_1\obj\Debug\netcoreapp3.1\Laba 1_1.pdb
+C:\YandexDisk\БГУИР 90331\ООП\BSUIR-C-\Laba 1_1\Laba 1_1\obj\Debug\netcoreapp3.1\Laba 1_1.csproj.CoreCompileInputs.cache
+C:\YandexDisk\БГУИР 90331\ООП\BSUIR-C-\Laba 1_1\Laba 1_1\obj\Debug\netcoreapp3.1\Laba 1_1.genruntimeconfig.cache
