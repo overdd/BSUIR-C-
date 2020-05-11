@@ -31,6 +31,30 @@ namespace Laba_1_2
             SetOfChars setEqual2 = new SetOfChars(exampleCharArrayEqual2);
             _ = (setEqual == setEqual2);
             _ = (setEqual != setEqual2);
+
+            Console.WriteLine(setPlus); // проверка переопределения ToString()
+
+            for (int i = 0; i < setPlus.ArrayChars.Length; i++) {                 // пример работы индексатора
+                Console.WriteLine("Element №{0} - {1}", i, setPlus[i]);
+            }
+
+            setPlus++;                          //++ и --
+            Console.WriteLine(setPlus);
+            setPlus--;
+            Console.WriteLine(setPlus);
+
+            Console.WriteLine(setPlus > setPlus2);
+            Console.WriteLine(setPlus < setPlus2);
+
+            if (setPlus)
+                Console.WriteLine("setPlus is Not empty");
+            if (new SetOfChars())
+                Console.WriteLine("Empty");
+            else
+                Console.WriteLine("New instance is Empty");
+
+            string someString = setPlus;
+            SetOfChars setFromString = (SetOfChars)someString;
         }
     }
 }

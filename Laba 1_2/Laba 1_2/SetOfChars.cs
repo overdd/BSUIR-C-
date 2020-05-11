@@ -32,7 +32,18 @@ namespace Laba_1_2
         {
         }
 
-
+        public char this[int index]
+        {
+            get
+            {
+                return
+                        ArrayChars[index];
+            }
+            set
+            {
+                ArrayChars[index] = value;
+            }
+        }
 
         public bool ArrayValidityChecker(char[] arrayChars)
         {
@@ -45,7 +56,6 @@ namespace Laba_1_2
             {
                 if (arrayChars[i] == arrayChars[i + 1] && !(arrayChars[i] == '\0'))
                 {
-                    Console.WriteLine("В массиве повторяется элемент: " + arrayChars[i]);
                     flag = false;
                 }
             }
@@ -54,7 +64,6 @@ namespace Laba_1_2
 
         public static SetOfChars operator +(SetOfChars A, SetOfChars B)
         {
-            Console.WriteLine("Начало перегрузки +");
             char[] tempCharArray = new char[A.ArrayChars.Length + B.ArrayChars.Length];
             A.ArrayChars.CopyTo(tempCharArray, 0);
             B.ArrayChars.CopyTo(tempCharArray, A.ArrayChars.Length);
@@ -67,14 +76,11 @@ namespace Laba_1_2
             {
                 Console.WriteLine("Ошибка: " + e.Message);
             };
-            Console.WriteLine("Конец перегрузки +");
             return temp;
         }
 
-
         public static SetOfChars operator -(SetOfChars A, SetOfChars B)
         {
-            Console.WriteLine("Начало перегрузки -");
             char[] tempCharArray = new char[A.ArrayChars.Length];
             SetOfChars temp = new SetOfChars();
             A.ArrayChars.CopyTo(tempCharArray, 0);
@@ -95,13 +101,16 @@ namespace Laba_1_2
             {
                 Console.WriteLine("Ошибка: " + e.Message);
             };
-            Console.WriteLine("Конец перегрузки -");
             return temp;
+        }
+
+        public static explicit operator SetOfChars(string v)
+        {
+            return new SetOfChars(v.ToCharArray());
         }
 
         public static SetOfChars operator *(SetOfChars A, SetOfChars B)
         {
-            Console.WriteLine("Начало перегрузки *");
             char[] tempCharArray = new char[A.ArrayChars.Length];
             SetOfChars temp = new SetOfChars();
 
@@ -124,10 +133,8 @@ namespace Laba_1_2
             {
                 Console.WriteLine("Ошибка: " + e.Message);
             };
-            Console.WriteLine("Конец перегрузки *");
             return temp;
         }
-
 
 
         public static bool operator ==(SetOfChars A, SetOfChars B)
@@ -140,18 +147,15 @@ namespace Laba_1_2
                 Array.Sort(tempCharB);
                 if (tempCharA.SequenceEqual(tempCharB))
                 {
-                    Console.WriteLine("Равны");
                     return tempCharA.SequenceEqual(tempCharB);
                 }
                 else
                 {
-                    Console.WriteLine("Не равны");
                     return false;
                 };
             }
             else
             {
-                Console.WriteLine("Не равны");
                 return false;
             }
         }
@@ -166,30 +170,99 @@ namespace Laba_1_2
                 Array.Sort(tempCharB);
                 if (tempCharA.SequenceEqual(tempCharB))
                 {
-                    Console.WriteLine("Ложь");
                     return tempCharA.SequenceEqual(tempCharB);
                 }
                 else
                 {
-                    Console.WriteLine("Истина");
                     return false;
                 };
             }
             else
             {
-                Console.WriteLine("Истина");
                 return false;
             }
         }
 
+        public static SetOfChars operator ++(SetOfChars A)
+        {
+            char[] tempCharArray = new char[A.ArrayChars.Length];
+            for (int i = 0; i < A.ArrayChars.Length; i++)
+            {
+                tempCharArray[i] = (char)((int)A.ArrayChars[i] + 1);
+            }
+            return new SetOfChars(tempCharArray);
+        }
+
+        public static SetOfChars operator --(SetOfChars A)
+        {
+            char[] tempCharArray = new char[A.ArrayChars.Length];
+            for (int i = 0; i < A.ArrayChars.Length; i++)
+            {
+                tempCharArray[i] = (char)((int)A.ArrayChars[i] - 1);
+            }
+            return new SetOfChars(tempCharArray);
+        }
+
+        public static bool operator >(SetOfChars A, SetOfChars B)
+        {
+            int counterA = 0;
+            int counterB = 0;
+            foreach (char element in A.ArrayChars)
+            {
+                counterA += (int)element;
+            }
+            foreach (char element in B.ArrayChars)
+            {
+                counterB += (int)element;
+            }
+
+            return (counterA > counterB) ? true : false;
+        }
+
+        public static bool operator <(SetOfChars A, SetOfChars B)
+        {
+            int counterA = 0;
+            int counterB = 0;
+            foreach (char element in A.ArrayChars)
+            {
+                counterA += (int)element;
+            }
+            foreach (char element in B.ArrayChars)
+            {
+                counterB += (int)element;
+            }
+            return (counterA > counterB) ? false : true;
+        }
+
+
+        public static bool operator true(SetOfChars A)
+        {
+            return (A.ArrayChars == null) ? false : true;
+        }
+
+        public static bool operator false(SetOfChars A)
+        {
+            return (A.ArrayChars == null) ? false : true;
+        }
+
+        public static implicit operator string(SetOfChars v)
+        {
+            StringBuilder sb = new StringBuilder("");
+            foreach (char element in v.ArrayChars)
+                sb.Append(element);
+            return sb.ToString();
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder("");
+            foreach (char element in ArrayChars)
+                sb.Append(element);
+            return sb.ToString();
+        }
         public override bool Equals(object o)
         {
-            if (o == null)
-                return false;
-
-            var second = o as SetOfChars;
-
-            return second != null && ArrayChars == second.ArrayChars;
+            return false;
         }
 
         public override int GetHashCode()
