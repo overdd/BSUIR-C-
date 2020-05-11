@@ -4,8 +4,10 @@ C:\YandexDisk\БГУИР 90331\ООП\BSUIR-C-\Laba 1_2\Laba 1_2\bin\Debug\netco
 C:\YandexDisk\БГУИР 90331\ООП\BSUIR-C-\Laba 1_2\Laba 1_2\bin\Debug\netcoreapp3.1\Laba 1_2.runtimeconfig.dev.json
 C:\YandexDisk\БГУИР 90331\ООП\BSUIR-C-\Laba 1_2\Laba 1_2\bin\Debug\netcoreapp3.1\Laba 1_2.dll
 C:\YandexDisk\БГУИР 90331\ООП\BSUIR-C-\Laba 1_2\Laba 1_2\bin\Debug\netcoreapp3.1\Laba 1_2.pdb
+C:\YandexDisk\БГУИР 90331\ООП\BSUIR-C-\Laba 1_2\Laba 1_2\obj\Debug\netcoreapp3.1\Laba 1_2.csprojAssemblyReference.cache
+C:\YandexDisk\БГУИР 90331\ООП\BSUIR-C-\Laba 1_2\Laba 1_2\obj\Debug\netcoreapp3.1\Laba 1_2.csproj.CoreCompileInputs.cache
 C:\YandexDisk\БГУИР 90331\ООП\BSUIR-C-\Laba 1_2\Laba 1_2\obj\Debug\netcoreapp3.1\Laba 1_2.AssemblyInfoInputs.cache
 C:\YandexDisk\БГУИР 90331\ООП\BSUIR-C-\Laba 1_2\Laba 1_2\obj\Debug\netcoreapp3.1\Laba 1_2.AssemblyInfo.cs
 C:\YandexDisk\БГУИР 90331\ООП\BSUIR-C-\Laba 1_2\Laba 1_2\obj\Debug\netcoreapp3.1\Laba 1_2.dll
 C:\YandexDisk\БГУИР 90331\ООП\BSUIR-C-\Laba 1_2\Laba 1_2\obj\Debug\netcoreapp3.1\Laba 1_2.pdb
-C:\YandexDisk\БГУИР 90331\ООП\BSUIR-C-\Laba 1_2\Laba 1_2\obj\Debug\netcoreapp3.1\Laba 1_2.csprojAssemblyReference.cache
+C:\YandexDisk\БГУИР 90331\ООП\BSUIR-C-\Laba 1_2\Laba 1_2\obj\Debug\netcoreapp3.1\Laba 1_2.genruntimeconfig.cache

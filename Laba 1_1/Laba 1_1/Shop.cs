@@ -12,6 +12,25 @@ namespace Laba_1_1
         private float totalCostOfGoodsSold;                                   //стоимость проданных товаров итого
         private float totalOverheadCosts;                                     // накладные расходы итого
 
+        public Shop(int ShopStaffNumber, float TotalRevenue, float AverageStaffCompensation, float TotalCostOfGoodsSold, float TotalOverheadCosts)
+        {
+            this.ShopStaffNumber = ShopStaffNumber;
+            this.TotalRevenue = TotalRevenue;
+            this.AverageStaffCompensation = AverageStaffCompensation;
+            this.TotalCostOfGoodsSold = TotalCostOfGoodsSold;
+            this.TotalOverheadCosts = TotalOverheadCosts;
+        }
+
+        public Shop() : this(1, 10000, 450, 8000, 500)   //конструктор без аргументов
+        {
+        }
+
+        //конструктор с частью аргументов
+        public Shop(int ShopStaffNumber, float TotalRevenue, float AverageStaffCompensation) : this(ShopStaffNumber, TotalRevenue, AverageStaffCompensation, 0, 0)
+        {
+        }
+
+
         public int ShopStaffNumber
         {
             get { return shopStaffNumber; }
@@ -58,23 +77,7 @@ namespace Laba_1_1
             }
         }
 
-        public Shop(int ShopStaffNumber, float TotalRevenue, float AverageStaffCompensation, float TotalCostOfGoodsSold, float TotalOverheadCosts)
-        {
-            this.ShopStaffNumber = ShopStaffNumber;
-            this.TotalRevenue = TotalRevenue;
-            this.AverageStaffCompensation = AverageStaffCompensation;
-            this.TotalCostOfGoodsSold = TotalCostOfGoodsSold;
-            this.TotalOverheadCosts = TotalOverheadCosts;
-        }
 
-        public Shop() : this(1, 10000, 450, 8000, 500)   //конструктор без аргументов
-        {
-        }
-
-        //конструктор с частью аргументов
-        public Shop(int ShopStaffNumber, float TotalRevenue, float AverageStaffCompensation) : this(ShopStaffNumber, TotalRevenue, AverageStaffCompensation, 0, 0)
-        {
-        }
 
         //переопределение ToString()
         public override string ToString()
