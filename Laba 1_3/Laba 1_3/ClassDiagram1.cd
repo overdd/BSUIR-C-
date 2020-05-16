@@ -1,4 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Laba_1_3.Cargo">
+    <Position X="8.5" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAABAAAIAEAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Cargo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Laba_1_3.Train">
+    <Position X="0.75" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQEAAAAAAAAAAAAAAAAAAAQAAAAAAAAAACBQ=</HashCode>
+      <FileName>Train.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TrainStation" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Wagons" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Laba_1_3.TrainStation">
+    <Position X="0.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TrainStation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Laba_1_3.Wagon">
+    <Position X="5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAEAAAAABAAEAAAAAAAAAAAAAAAKAAQAAAAAACA=</HashCode>
+      <FileName>Wagon.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="CargoLoad" />
+    </ShowAsCollectionAssociation>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
