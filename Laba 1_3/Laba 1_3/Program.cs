@@ -6,7 +6,8 @@ namespace Laba_1_3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine(new Wagon(4).CargoLoad[2].CargoId.ToString());
+
         }
     }
 }
