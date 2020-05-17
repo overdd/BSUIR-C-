@@ -7,7 +7,7 @@ namespace Laba_1_4
     abstract class TextProcessor : Software
     {
         public abstract string[] SupportedFormats { get; set; }
-        public override string SourceCode { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override string SourceCode { get; set; }
 
         public override void openFile()
         {

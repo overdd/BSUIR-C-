@@ -28,6 +28,7 @@ namespace Laba_1_4
         {
             this.fileSize = 0;
             SourceCode = "";
+            Console.WriteLine("This lane is from constructor of Software class.");
         }
     }
 }
