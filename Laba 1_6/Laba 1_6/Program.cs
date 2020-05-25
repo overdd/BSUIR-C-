@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Laba_1_6
 {
@@ -54,6 +55,7 @@ namespace Laba_1_6
                 Console.WriteLine("18 – List: реверс коллекции");
                 Console.WriteLine("19 – List: сортировка");
                 Console.WriteLine("20 – List: выполнение методов всех объектов, поддерживающих Multipliable");
+                Console.WriteLine("21 – Создайте обобщенный метод, который получает массив произвольного типа и возвращает количество элементов, не равных null.");
                 Console.WriteLine("0 – выход");
                 int otvet = Convert.ToInt32(Console.ReadLine());
                 switch (otvet)
@@ -78,9 +80,19 @@ namespace Laba_1_6
                     case 18: ListExecutor.reverseCollection(collectionList); break;
                     case 19: ListExecutor.sortCollection(collectionList); break; // сортируем по полю SourceCode
                     case 20: ListExecutor.runMultipliableInterface(collectionList); break; // запускаем метод Mult() у экземпляров классов, которые реализуют Multipliable
+                    case 21: Console.WriteLine(elementCounter(fileFormatsWord2007)); break;
                     default: return;
                 }
             }
+        }
+
+        public static int elementCounter<T>(T[] inputArray) {
+            int counter =0;
+            for (int i = 0; i < inputArray.Length; i++) {
+                if (inputArray[i] != null)
+                    counter++;
+            }
+            return counter;
         }
     }
 }
