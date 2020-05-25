@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Laba_1_6
 {
-    abstract class TextProcessor : Software, IComparable
+    public abstract class TextProcessor : Software, IComparable
     {
         public abstract string[] SupportedFormats { get; set; }
 

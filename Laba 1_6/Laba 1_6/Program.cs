@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Laba_1_6
 {
@@ -19,6 +20,15 @@ namespace Laba_1_6
             collection.Add(new LibreOfficeWriter(fileFormatsWord2007, 6.0));
             collection.Add(new LibreOfficeWriter(fileFormatsWord, 8.1));
 
+            List<TextProcessor> collectionList = new List<TextProcessor>();
+            collectionList.Add(new MicrosoftWord98(fileFormatsWord));
+            collectionList.Add(new MicrosoftWord98(fileFormatsWord));
+            collectionList.Add(new MicrosoftWord98(fileFormatsWord2007));
+            collectionList.Add(new MicrosoftWord(fileFormatsWord));
+            collectionList.Add(new LibreOfficeWriter(fileFormatsWord98, 7.1));
+            collectionList.Add(new LibreOfficeWriter(fileFormatsWord2007, 6.0));
+            collectionList.Add(new LibreOfficeWriter(fileFormatsWord, 8.1));
+
             while (true)
             {
                 Console.WriteLine("****************************");
@@ -33,7 +43,17 @@ namespace Laba_1_6
                 Console.WriteLine("7 – удаление элемента по значению (данные для поиска по полю name вводим с клавиатуры)");
                 Console.WriteLine("8 – реверс коллекции");
                 Console.WriteLine("9 – сортировка");
-                Console.WriteLine("10 –  выполнение методов всех объектов, поддерживающих Multipliable");
+                Console.WriteLine("10 – выполнение методов всех объектов, поддерживающих Multipliable");
+                Console.WriteLine("11 – List: просмотр коллекции");
+                Console.WriteLine("12 – List: добавление элемента (данные вводим с клавиатуры)");
+                Console.WriteLine("13 – List: добавление элемента по указанному индексу (индекс и данные вводим с клавиатуры)");
+                Console.WriteLine("14 – List: нахождение элемента с начала коллекции (данные для поиска по полю name вводим с клавиатуры, минимум 2 объекта с одинаковыми именами)");
+                Console.WriteLine("15 – List: нахождение элемента с конца коллекции (данные для поиска по полю name вводим с клавиатуры, минимум 2 объекта с одинаковыми именами)");
+                Console.WriteLine("16 – List: удаление элемента по индексу (индекс вводим с клавиатуры)");
+                Console.WriteLine("17 – List: удаление элемента по значению (данные для поиска по полю name вводим с клавиатуры)");
+                Console.WriteLine("18 – List: реверс коллекции");
+                Console.WriteLine("19 – List: сортировка");
+                Console.WriteLine("20 – List: выполнение методов всех объектов, поддерживающих Multipliable");
                 Console.WriteLine("0 – выход");
                 int otvet = Convert.ToInt32(Console.ReadLine());
                 switch (otvet)
@@ -48,6 +68,16 @@ namespace Laba_1_6
                     case 8: Executor.reverseCollection(collection); break;
                     case 9: Executor.sortCollection(collection); break; // сортируем по полю SourceCode
                     case 10: Executor.runMultipliableInterface(collection); break; // запускаем метод Mult() у экземпляров классов, которые реализуют Multipliable
+                    case 11: ListExecutor.collectionViewer(collectionList); break;
+                    case 12: ListExecutor.addElementToCollection(collectionList); break;  //вводим с клавиатуры форматы
+                    case 13: ListExecutor.addElementToCollectionByIndex(collectionList); break; // вводим с клавиатуры форматы
+                    case 14: ListExecutor.findFirstMatch(collectionList); break;  // ищем по полю SourceCode 
+                    case 15: ListExecutor.findLastMatch(collectionList); break;  // ищем по полю SourceCode с конца 
+                    case 16: ListExecutor.removeByIndex(collectionList); break;  // удаляем элемент с заданным индексом
+                    case 17: ListExecutor.removeByMatch(collectionList); break;  // удаляем элемент при совпадении строки поиска
+                    case 18: ListExecutor.reverseCollection(collectionList); break;
+                    case 19: ListExecutor.sortCollection(collectionList); break; // сортируем по полю SourceCode
+                    case 20: ListExecutor.runMultipliableInterface(collectionList); break; // запускаем метод Mult() у экземпляров классов, которые реализуют Multipliable
                     default: return;
                 }
             }

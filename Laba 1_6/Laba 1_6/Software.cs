@@ -2,7 +2,7 @@
 
 namespace Laba_1_6
 {
-    abstract class Software : Printable
+    public abstract class Software : Printable
     {
         private int fileSize;
 
